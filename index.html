@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Rudolf | Associate Professor of Accounting</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #2c5282;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--accent-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        /* Bio Section */
+        .bio-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 600px) {
+            .bio-content {
+                grid-template-columns: 200px 1fr;
+            }
+        }
+
+        .bio-photo {
+            width: 180px;
+            height: 220px;
+            border: 1px solid var(--border-color);
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .bio-text p {
+            margin-bottom: 15px;
+        }
+
+        .research-interests {
+            background-color: var(--light-bg);
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .research-interests strong {
+            color: var(--primary-color);
+        }
+
+        /* Publications */
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-list li {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .pub-list li:hover {
+            border-left-color: var(--accent-color);
+        }
+
+        .pub-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a.pub-title:hover {
+            text-decoration: underline;
+        }
+
+        .pub-authors {
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .pub-venue {
+            color: #718096;
+        }
+
+        .pub-status {
+            display: inline-block;
+            background-color: var(--light-bg);
+            padding: 2px 8px;
+            font-size: 0.85rem;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            font-weight: normal;
+            margin: 35px 0 20px;
+        }
+
+        h3:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Contact */
+        .contact-info {
+            background-color: var(--light-bg);
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .contact-info {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            min-width: 80px;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #90cdf4;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                padding: 12px 15px;
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 35px 0;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nicolas Rudolf</h1>
+            <p>Associate Professor of Accounting<br>
+            HEC Lausanne | University of Lausanne</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#bio">Bio</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="bio">
+            <h2>About Me</h2>
+            <div class="bio-content">
+                <img src="Bild2.jpg" alt="Nicolas Rudolf" class="bio-photo">
+                <div class="bio-text">
+                    <p>I am an Associate Professor of Accounting at HEC Lausanne, University of Lausanne, where I have been on the faculty since August 2025.</p>
+                    <p>I received my Ph.D. in Accounting from the University of Mannheim in 2020. During my doctoral studies, I was a visiting researcher at Lancaster University Management School.</p>
+                    <div class="research-interests">
+                        <strong>Research Interests:</strong> Corporate Governance, Manager Characteristics, Bank Accounting, Artificial Intelligence
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            <p>My research examines how accounting information and disclosures shape firm behavior and transparency. I study these questions in several contexts: corporate reporting choices and their effects on transparency, particularly in banking; institutional investors' disclosures and their influence on corporate governance; and, more recently, how performance management tools can improve human-AI collaboration in financial decision-making.</p>
+
+            <h3>Current Projects</h3>
+            <ul class="pub-list">
+                <li>
+                    <a href="https://dx.doi.org/10.2139/ssrn.4401038" class="pub-title">Accounting Enforcement and Bank Transparency under Hierarchical Supervision in a Banking Union</a><br>
+                    <span class="pub-authors">with Jannis Bischof and Ferdinand Elfers</span><br>
+                    <span class="pub-status">Conditional Accept at The Accounting Review</span>
+                </li>
+                <li>
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4660355" class="pub-title">Leading by Example: Can One Large Shareholder's Voting Pre-Disclosure Influence Voting Outcomes?</a><br>
+                    <span class="pub-authors">with Ruediger Fahlenbrach and Alexis Wegerich</span>
+                </li>
+                <li>
+                    <span class="pub-title">How Regulatory Shocks Travel Through Supply Chains: Capital Market and Real Effects of the European Union's Deforestation Regulation</span><br>
+                    <span class="pub-authors">with Florian Habermann (University College Dublin) and Amadeus Bach (University of Mannheim)</span>
+                </li>
+            </ul>
+
+            <h3>Grants</h3>
+            <ul class="pub-list">
+                <li>
+                    <span class="pub-title">The Role of Shareholder Voting and Disclosures in Corporate Governance</span><br>
+                    <span class="pub-authors">Principal Investigator | Project Partners: Alexis Wegerich (NBIM), Rüdiger Fahlenbrach (EPFL)</span><br>
+                    <span class="pub-venue">Swiss National Science Foundation | 348,191 CHF</span>
+                </li>
+                <li>
+                    <span class="pub-title">Successful Design Choices for Human-Artificial Intelligence Collaborations in Accounting</span><br>
+                    <span class="pub-authors">Project Partner | PIs: Klaus Möller (University of St. Gallen), Antonio Davila (University of Lausanne)</span><br>
+                    <span class="pub-venue">Swiss National Science Foundation | 594,767 CHF</span>
+                </li>
+                <li>
+                    <span class="pub-title">The Impact of Western Sustainability Regulations on the Global South</span><br>
+                    <span class="pub-authors">Project Partner | PIs: Peter Fiechter (University of Neuchâtel), Gaia Melloni (University of St. Gallen)</span><br>
+                    <span class="pub-venue">Swiss National Science Foundation | 318,430 CHF</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+
+            <h3>Journal Articles</h3>
+            <ul class="pub-list">
+                <li>
+                    <a href="https://link.springer.com/article/10.1038/s41598-025-25002-7" class="pub-title">Gender, Knowledge, and Trust in Artificial Intelligence: A Classroom-Based Randomized Experiment</a><br>
+                    <span class="pub-authors">with Antonio Davila, Ismail El-Fassi, and Daniel Oyon</span><br>
+                    <span class="pub-venue">Scientific Reports, 2025</span>
+                </li>
+                <li>
+                    <span class="pub-title">Manager Characteristics and the Informativeness of Banks' Loan Loss Provisioning</span><br>
+                    <span class="pub-authors">with Jannis Bischof</span><br>
+                    <span class="pub-venue">Review of Accounting Studies, 2025</span>
+                </li>
+                <li>
+                    <a href="https://www.tandfonline.com/doi/full/10.1080/09638180.2025.2508503" class="pub-title">Investor Alignment in Divestment Decisions and Firm Behavior: Evidence from Publicly Disclosed Exclusion Lists</a><br>
+                    <span class="pub-authors">with Huajuan Yuan</span><br>
+                    <span class="pub-venue">European Accounting Review, 2025</span>
+                </li>
+                <li>
+                    <a href="https://onlinelibrary.wiley.com/doi/10.1111/jofi.13337" class="pub-title">Nonstandard Errors</a><br>
+                    <span class="pub-authors">Crowd-sourced research project</span><br>
+                    <span class="pub-venue">The Journal of Finance, 2024, Vol. 79, No. 3, 1715-2393</span>
+                </li>
+                <li>
+                    <a href="https://www.tandfonline.com/doi/full/10.1080/09638180.2022.2071960" class="pub-title">How Do Non-Performing Loans Evolve Along the Economic Cycle? The Role of Macroeconomic Conditions and Legal Efficiency</a><br>
+                    <span class="pub-authors">with Jannis Bischof and Wilhelm Schmundt</span><br>
+                    <span class="pub-venue">European Accounting Review, 2022, Vol. 31, No. 5, 1149-1174</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Address</span>
+                    <span>HEC Lausanne<br>
+                    Anthropole 3023<br>
+                    CH-1015 Lausanne-Dorigny<br>
+                    Switzerland</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <span><a href="mailto:nicolas.rudolf@unil.ch">nicolas.rudolf@unil.ch</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    <span>+41 21 692 3456</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Profiles</span>
+                    <span>
+                        <a href="https://scholar.google.com/citations?user=bnBYVkcAAAAJ&hl=fr">Google Scholar</a> |
+                        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=4715783">SSRN</a> |
+                        <a href="https://orcid.org/0000-0002-3717-5555">ORCID</a> |
+                        <a href="https://www.linkedin.com/in/nicolas-rudolf-4a1880206/">LinkedIn</a>
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nicolas Rudolf | HEC Lausanne</p>
+    </footer>
+</body>
+</html>
